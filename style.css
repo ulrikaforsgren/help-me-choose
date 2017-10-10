@@ -1,0 +1,10 @@
+body {
+  background-color:#add8e6;
+}
+h1, div.choose {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family:"Georgia";
+}
