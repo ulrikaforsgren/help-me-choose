@@ -12,9 +12,24 @@
         <div class="input">
           <input placeholder="Between this"></input>
         </div>
-        <button>Add</button>
+        <button class="addOption">Add</button>
+      </div>
+      <div class="resultSection">
       </div>
       <button>Randomize</button>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script>
+        $(function () {
+          $('.resultSection').hide()
+
+          var add_option = function () {
+            $('.input').append('<input></input>')
+          }
+
+          $('.addOption').click(add_option)
+        })
+      </script>
     </div>
   </body>
 </html>
