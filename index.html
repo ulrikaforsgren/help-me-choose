@@ -9,25 +9,37 @@
     <div class="container">
       <h1>Let me choose for you!</h1>
       <div class="choose">
-        <div class="input">
+        <div class="inputs">
           <input placeholder="Between this"></input>
         </div>
         <button class="addOption">Add</button>
       </div>
       <div class="resultSection">
       </div>
-      <button>Randomize</button>
+      <button class="submit">Randomize</button>
 
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script>
-        $(function () {
+        $(function() {
           $('.resultSection').hide()
 
-          var add_option = function () {
-            $('.input').append('<input></input>')
+          var add_option = function() {
+            $('.inputs').append('<input></input>')
           }
 
           $('.addOption').click(add_option)
+          var options = []
+          var submit = function() {
+            $('.choose').hide()
+            $('.resultSection').css('display', 'flex')
+            $('input').each(function() {
+              options.push($(this).val())
+            })
+          var winner = options[Math.floor(Math.random() * options.length)]
+          console.log(winner)
+          $('.resultSection').text(winner)
+          }
+          $('.submit').click(submit)
         })
       </script>
     </div>
